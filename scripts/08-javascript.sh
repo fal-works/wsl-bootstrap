@@ -43,12 +43,12 @@ eval "$(mise activate bash)"
 
 # BLOCK: Install pnpm
 # PURPOSE: Set up pnpm package manager
-# DETAILS: Installs pnpm globally via npm as a standalone package manager
+# DETAILS: Installs pnpm globally using official installer as a standalone package manager
 #          pnpm is not version-managed and can self-update independently of Node.js
 #          Updates via: pnpm self-update
 # IMPORTANCE: CRITICAL - pnpm is required for stated dev environment.
 log "Installing pnpm package manager..."
-npm install -g pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 log "Verifying Node.js and pnpm versions..."
 node --version

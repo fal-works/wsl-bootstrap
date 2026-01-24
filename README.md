@@ -8,7 +8,7 @@ This setup installs:
 
 - **System packages** (git-lfs, gh, etc.) - via apt
 - **Node.js** - via mise (runtime version manager)
-- **pnpm** - via npm (Node.js package manager)
+- **pnpm** - via curl and official installer
 - **Python** - via uv (Python installer/manager)
 - **Haxe** - via mise (runtime version manager)
 - **Neko VM** - via Homebrew (package manager)
