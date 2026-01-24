@@ -67,7 +67,10 @@ brew install neko
 touch ~/.bashrc
 neko_path='export NEKOPATH="/home/linuxbrew/.linuxbrew/lib/neko"'
 if ! grep -Fxq "$neko_path" ~/.bashrc; then
+    echo "" >> ~/.bashrc
+    echo "# neko" >> ~/.bashrc
     echo "$neko_path" >> ~/.bashrc
+    echo "# neko end" >> ~/.bashrc
 fi
 # Set NEKOPATH in current shell
 export NEKOPATH="/home/linuxbrew/.linuxbrew/lib/neko"

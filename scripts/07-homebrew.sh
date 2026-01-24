@@ -24,13 +24,13 @@ log "Installing Homebrew..."
 touch ~/.bashrc
 brew_shellenv='eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
 if ! grep -Fxq "$brew_shellenv" ~/.bashrc; then
+	echo "" >> ~/.bashrc
+	echo "# Homebrew" >> ~/.bashrc
 	echo "$brew_shellenv" >> ~/.bashrc
-fi
-
-# Add forbidden formulae setting to ~/.bashrc (idempotent)
-brew_forbidden='export HOMEBREW_FORBIDDEN_FORMULAE="node python python3 pip npm pnpm yarn haxe claude"'
-if ! grep -Fxq "$brew_forbidden" ~/.bashrc; then
+	brew_forbidden='export HOMEBREW_FORBIDDEN_FORMULAE="node python python3 pip npm pnpm yarn haxe claude"'
 	echo "$brew_forbidden" >> ~/.bashrc
+	echo "# Homebrew end" >> ~/.bashrc
+	eval "$brew_forbidden"
 fi
 
 # Activate Homebrew in current shell

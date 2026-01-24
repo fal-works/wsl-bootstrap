@@ -22,7 +22,10 @@ curl https://mise.run | sh
 touch ~/.bashrc
 mise_activation='eval "$(~/.local/bin/mise activate bash)"'
 if ! grep -Fxq "$mise_activation" ~/.bashrc; then
+   echo "" >> ~/.bashrc
+   echo "# mise" >> ~/.bashrc
    echo "$mise_activation" >> ~/.bashrc
+   echo "# mise end" >> ~/.bashrc
 fi
 # Activate mise in current shell
 eval "$(~/.local/bin/mise activate bash)"
