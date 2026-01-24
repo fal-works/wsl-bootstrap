@@ -2,6 +2,8 @@
 
 Setup scripts for WSL2 (Ubuntu 24.04) environment tailored for JavaScript, Python, and Haxe development.
 
+For a brief primer on `.bashrc` behavior in these scripts, see [bashrc.md](bashrc.md).
+
 ## Tools & Installation Methods
 
 This setup installs:

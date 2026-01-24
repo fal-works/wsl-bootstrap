@@ -10,6 +10,7 @@ See `README.md` for repository purpose, tools installed, usage instructions, and
 - **Loading .env variables:** Use relative path from script location to find `.env` at repo root, with error handling.
 - **Idempotent .bashrc modifications:** Check with `grep -Fxq` before appending to avoid duplicates.
 - **Tool availability checks (for tools from previous scripts):** Source `.bashrc` first to load PATH updates, then verify with `command -v`.
+- **PATH refresh after installation:** After installing a tool and before using the new command, you sometimes need to re-source `~/.bashrc` or re-activate mise to load PATH updates.
 - **Inline Documentation:** Each script block has comments explaining purpose and key steps.
 
 ## Shared Functions
