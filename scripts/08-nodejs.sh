@@ -15,7 +15,7 @@ if [ -z "${NODE_VERSION}" ]; then
     exit 1
 fi
 
-log "=== Installing JavaScript Tools ==="
+log "=== Installing Node.js ==="
 
 # Ensure mise is available before proceeding
 if [ -f ~/.bashrc ]; then
@@ -41,18 +41,8 @@ mise use -g node@${NODE_VERSION}
 # Re-activate mise to update PATH with newly installed tools
 eval "$(mise activate bash)"
 
-# BLOCK: Install pnpm
-# PURPOSE: Set up pnpm package manager
-# DETAILS: Installs pnpm globally using official installer as a standalone package manager
-#          pnpm is not version-managed and can self-update independently of Node.js
-#          Updates via: pnpm self-update
-# IMPORTANCE: CRITICAL - pnpm is required for stated dev environment.
-log "Installing pnpm package manager..."
-curl -fsSL https://get.pnpm.io/install.sh | sh -
-
-log "Verifying Node.js and pnpm versions..."
+log "Verifying Node.js version..."
 node --version
-pnpm --version
 
-log "✓ JavaScript tools installation complete"
-log "  Installed: Node.js ${NODE_VERSION}, pnpm"
+log "✓ Node.js installation complete"
+log "  Installed: Node.js ${NODE_VERSION}"

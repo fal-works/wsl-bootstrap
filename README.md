@@ -29,9 +29,10 @@ This setup installs:
    bash scripts/05-github.sh
    bash scripts/06-mise.sh
    bash scripts/07-homebrew.sh
-   bash scripts/08-javascript.sh
-   bash scripts/09-python.sh
-   bash scripts/10-haxe.sh
+   bash scripts/08-nodejs.sh
+   bash scripts/09-pnpm.sh
+   bash scripts/10-python.sh
+   bash scripts/11-haxe.sh
    ```
 3. After completion, restart WSL: `wsl --shutdown` (from Windows command prompt or PowerShell)
 
@@ -44,6 +45,7 @@ This setup installs:
 - `05-github.sh` - GitHub CLI and authentication
 - `06-mise.sh` - Runtime version manager
 - `07-homebrew.sh` - Homebrew package manager
-- `08-javascript.sh` - Node.js, pnpm (requires mise for Node.js)
-- `09-python.sh` - Python via uv
-- `10-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
+- `08-nodejs.sh` - Node.js (via mise)
+- `09-pnpm.sh` - pnpm (official installer; requires Node.js first)
+- `10-python.sh` - Python via uv
+- `11-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
