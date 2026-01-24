@@ -29,24 +29,26 @@ if ! command -v mise >/dev/null 2>&1; then
     exit 1
 fi
 
-# BLOCK: Install Node.js and pnpm via version manager
-# PURPOSE: Set up Node.js runtime and pnpm package manager
-# DETAILS: Performs the following:
-#          1. Installs specified version of Node.js globally
-#          2. Installs pnpm package manager)
-#          3. Sets both as global defaults via 'mise use -g'
-#          Node.js is used for JavaScript development, pnpm is a faster npm alternative
-# IMPORTANCE: CRITICAL - Node.js and pnpm are required for stated dev environment.
+# BLOCK: Install Node.js
+# PURPOSE: Set up Node.js runtime
+# DETAILS: Installs specified version of Node.js globally and sets as default
+#          Node.js is used for JavaScript development and is managed via mise
+# IMPORTANCE: CRITICAL - Node.js is required for stated dev environment.
 log "Installing Node.js ${NODE_VERSION}..."
 mise install node@${NODE_VERSION}
 mise use -g node@${NODE_VERSION}
 
-log "Installing pnpm package manager..."
-mise install pnpm
-mise use -g pnpm
-
 # Re-activate mise to update PATH with newly installed tools
 eval "$(mise activate bash)"
+
+# BLOCK: Install pnpm
+# PURPOSE: Set up pnpm package manager
+# DETAILS: Installs pnpm globally via npm as a standalone package manager
+#          pnpm is not version-managed and can self-update independently of Node.js
+#          Updates via: pnpm self-update
+# IMPORTANCE: CRITICAL - pnpm is required for stated dev environment.
+log "Installing pnpm package manager..."
+npm install -g pnpm
 
 log "Verifying Node.js and pnpm versions..."
 node --version

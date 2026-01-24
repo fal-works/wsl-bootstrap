@@ -6,10 +6,12 @@ Setup scripts for WSL2 (Ubuntu 24.04) environment tailored for JavaScript, Pytho
 
 This setup installs:
 
-- **Node.js, pnpm, Haxe** - via mise (runtime version manager)
-- **Neko VM** - via Homebrew (package manager)
-- **Python** - via uv (Python installer/manager)
 - **System packages** (git-lfs, gh, etc.) - via apt
+- **Node.js** - via mise (runtime version manager)
+- **pnpm** - via npm (Node.js package manager)
+- **Python** - via uv (Python installer/manager)
+- **Haxe** - via mise (runtime version manager)
+- **Neko VM** - via Homebrew (package manager)
 
 ## Usage
 
@@ -42,6 +44,6 @@ This setup installs:
 - `05-github.sh` - GitHub CLI and authentication
 - `06-mise.sh` - Runtime version manager
 - `07-homebrew.sh` - Homebrew package manager
-- `08-javascript.sh` - Node.js, pnpm (requires mise)
+- `08-javascript.sh` - Node.js, pnpm (requires mise for Node.js)
 - `09-python.sh` - Python via uv
 - `10-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
