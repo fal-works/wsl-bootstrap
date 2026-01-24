@@ -40,9 +40,9 @@ enabled=false
 appendWindowsPath=false
 EOF
 else
-	# Update existing interop block values in-place
-	sudo sed -i -E 's/^enabled=.*/enabled=false/' "$tmp_file"
-	sudo sed -i -E 's/^appendWindowsPath=.*/appendWindowsPath=false/' "$tmp_file"
+    # Update existing interop block values in-place
+	sed -i -E 's/^enabled=.*/enabled=false/' "$tmp_file"
+	sed -i -E 's/^appendWindowsPath=.*/appendWindowsPath=false/' "$tmp_file"
 fi
 
 sudo mv "$tmp_file" /etc/wsl.conf
