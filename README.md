@@ -54,3 +54,9 @@ This setup installs:
 - `09-pnpm.sh` - pnpm (official installer; requires Node.js first)
 - `10-python.sh` - Python via uv
 - `11-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
+
+## Additional Documents
+
+These documents provide some more reference information, but are not directly related to the scripts in this repository:
+
+- For optional Windows Terminal configuration (e.g., Enter key behavior with IME), see [docs/windows-terminal.md](docs/windows-terminal.md).
