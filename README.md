@@ -8,7 +8,7 @@ For a brief primer on `.bashrc` behavior in these scripts, see [bashrc.md](bashr
 
 This setup installs:
 
-- **System packages** (git-lfs, gh, etc.) - via apt
+- **System packages** (Git tooling, search tools, dev utilities, etc.) - via apt
 - **Node.js** - via mise (runtime version manager)
 - **pnpm** - via curl and official installer
 - **Python** - via uv (Python installer/manager)
