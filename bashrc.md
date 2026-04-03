@@ -33,4 +33,9 @@ esac
 # neko
 export NEKOPATH="/home/linuxbrew/.linuxbrew/lib/neko"
 # neko end
+
+# micro
+export EDITOR="micro"
+export VISUAL="micro"
+# micro end
 ```

@@ -14,6 +14,7 @@ This setup installs:
 - **Python** - via uv (Python installer/manager)
 - **Haxe** - via mise (runtime version manager)
 - **Neko VM** - via Homebrew (package manager)
+- **micro** - via apt
 
 ## Usage
 
@@ -37,6 +38,7 @@ This setup installs:
    bash scripts/09-pnpm.sh
    bash scripts/10-python.sh
    bash scripts/11-haxe.sh
+   bash scripts/12-micro.sh
    ```
 
 3. After completion, restart WSL: `wsl --shutdown` (from Windows command prompt or PowerShell)
@@ -54,6 +56,7 @@ This setup installs:
 - `09-pnpm.sh` - pnpm (official installer; requires Node.js first)
 - `10-python.sh` - Python via uv
 - `11-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
+- `12-micro.sh` - micro editor; sets `EDITOR`/`VISUAL` if absent
 
 ## Additional Documents
 
