@@ -22,7 +22,9 @@ This setup installs:
 **Prerequisites:** This setup assumes basic tools like `git`, `curl`, and `sudo` are already available in your WSL environment (they are included by default in Ubuntu 24.04).
 
 1. Copy `.env.sample` to `.env` and configure (there are required variables to set)
+
 2. Run scripts in order:
+
    ```bash
    bash scripts/01-locale.sh
    bash scripts/02-wsl.sh
@@ -36,6 +38,7 @@ This setup installs:
    bash scripts/10-python.sh
    bash scripts/11-haxe.sh
    ```
+
 3. After completion, restart WSL: `wsl --shutdown` (from Windows command prompt or PowerShell)
 
 ## Scripts
