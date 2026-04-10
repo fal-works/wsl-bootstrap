@@ -4,7 +4,7 @@
 
 With some IMEs, Enter both confirms composition *and* submits input — a combination that can cause accidental command executions. This is particularly disruptive in coding agent CLIs (Claude Code, Codex).
 
-The example below remaps Enter to `LF` (`\n`) for a specific WSL profile and moves `CR` to `Ctrl+Enter`.
+The example below remaps Enter and Shift+Enter to `LF` (`\n`) and moves `CR` to Ctrl+Enter.
 This affects only what Windows Terminal sends; `.inputrc` is untouched, so standard shell readline behavior is preserved.
 Because this overrides standard behavior, it is entirely optional.
 
@@ -37,13 +37,11 @@ The `User.sendInput` IDs (e.g. `LF_U000A`) are arbitrary — use any unique stri
         },
         {
             "id": "User.sendInput.CR_U000D",
-            "keys": "ctrl+enter",
-            "profile": "{your-wsl-profile-guid}"
+            "keys": "ctrl+enter"
         },
         {
             "id": "User.sendInput.LF_U000A",
-            "keys": "enter",
-            "profile": "{your-wsl-profile-guid}"
+            "keys": "enter"
         }
     ]
 }
