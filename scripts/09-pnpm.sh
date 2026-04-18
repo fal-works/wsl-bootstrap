@@ -9,10 +9,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/logger.sh"
 log "=== Installing pnpm ==="
 
 # Ensure Node.js is available
+# Don't error if ~/.bashrc is missing, as Node.js might be installed without mise
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
-else
-    # Don't error here, as Node.js might be installed without mise
 fi
 if ! command -v node >/dev/null 2>&1; then
     error "Node.js not found. Run the script that installs Node.js first."
