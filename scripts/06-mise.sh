@@ -13,7 +13,7 @@ log "=== Installing Runtime Version Manager (mise) ==="
 # DETAILS: Downloads and installs 'mise' (fork of asdf, faster version manager)
 #          and activates it in ~/.bashrc shell configuration.
 #          Verifies installation with 'mise doctor' check.
-# IMPORTANCE: CRITICAL - Required to manage Node.js, Haxe, pnpm versions
+# IMPORTANCE: CRITICAL - Required to manage Node.js and Haxe versions
 
 log "Installing mise version manager..."
 curl https://mise.run | sh
