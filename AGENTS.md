@@ -19,4 +19,5 @@ Functions in `lib/` are sourced by `scripts/` for reusable logging and environme
 
 ## Dependencies
 
-Scripts run in order (01→10) since there are inter-script dependencies, e.g., scripts using `mise` require the `mise` installation script to be run first.
+Scripts run in order since there are inter-script dependencies,
+e.g., scripts using `mise` require the `mise` installation script to be run first.
