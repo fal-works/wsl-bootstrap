@@ -23,11 +23,23 @@ export HOMEBREW_FORBIDDEN_FORMULAE="node python python3 pip npm pnpm yarn haxe c
 # Homebrew end
 
 # pnpm
-export PNPM_HOME="/home/username/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+pnpm() {
+  if [ "$1" = "self-update" ]; then
+    echo "[.bashrc override] pnpm self-update is delegated to mise" >&2
+    echo "$ mise upgrade pnpm" >&2
+    mise upgrade pnpm || return
+    echo "$ mise prune pnpm" >&2
+    mise prune pnpm
+  else
+    command pnpm "$@"
+  fi
+}
 # pnpm end
 
 # neko
