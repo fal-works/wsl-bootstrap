@@ -21,7 +21,7 @@ log "=== Installing Node.js ==="
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 else
-    error "~/.bashrc not found. Run the script that installs mise first."
+    error "$HOME/.bashrc not found. Run the script that installs mise first."
     exit 1
 fi
 if ! command -v mise >/dev/null 2>&1; then

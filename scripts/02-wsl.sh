@@ -36,7 +36,7 @@ fi
 
 # Append interop section (or create the file) without touching other settings
 tmp_file=$(mktemp)
-[ -f /etc/wsl.conf ] && sudo cat /etc/wsl.conf > "$tmp_file"
+[ -f /etc/wsl.conf ] && sudo cat /etc/wsl.conf | tee "$tmp_file" >/dev/null
 cat <<'EOF' >> "$tmp_file"
 
 [interop]
