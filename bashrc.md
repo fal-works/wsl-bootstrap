@@ -32,10 +32,10 @@ esac
 pnpm() {
   if [ "$1" = "self-update" ]; then
     echo "[.bashrc override] pnpm self-update is delegated to mise" >&2
-    echo "$ mise upgrade pnpm" >&2
-    mise upgrade pnpm || return
-    echo "$ mise prune pnpm" >&2
-    mise prune pnpm
+    echo "$ mise upgrade npm:pnpm" >&2
+    mise upgrade npm:pnpm || return
+    echo "$ mise prune npm:pnpm" >&2
+    mise prune npm:pnpm
   else
     command pnpm "$@"
   fi

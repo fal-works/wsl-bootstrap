@@ -17,14 +17,15 @@ if ! command -v mise >/dev/null 2>&1; then
     exit 1
 fi
 
-# BLOCK: Install pnpm via mise
-# PURPOSE: Set up pnpm package manager, managed by mise
-# DETAILS: mise manages pnpm independently of the active Node.js version,
-#          so pnpm does not disappear when switching Node versions.
-#          Upgrade with: mise upgrade pnpm && mise prune pnpm
+# BLOCK: Install pnpm via mise (npm backend)
+# PURPOSE: Set up pnpm package manager
+# DETAILS: Uses the npm backend (not the default standalone).
+#          The standalone bundles its own Node runtime, which can trigger
+#          false-positive warnings on the Node version in some sandboxed environemnts.
+#          The npm backend installs pure-JS pnpm that runs on the active mise Node.
 # IMPORTANCE: CRITICAL - pnpm is required for the stated dev environment.
-log "Installing pnpm via mise (latest)..."
-mise use -g pnpm@latest
+log "Installing pnpm via mise (npm backend, latest)..."
+mise use -g npm:pnpm@latest
 
 # Re-activate mise so newly installed pnpm is on PATH
 eval "$(mise activate bash)"
@@ -48,10 +49,10 @@ esac
 pnpm() {
   if [ "$1" = "self-update" ]; then
     echo "[.bashrc override] pnpm self-update is delegated to mise" >&2
-    echo "$ mise upgrade pnpm" >&2
-    mise upgrade pnpm || return
-    echo "$ mise prune pnpm" >&2
-    mise prune pnpm
+    echo "$ mise upgrade npm:pnpm" >&2
+    mise upgrade npm:pnpm || return
+    echo "$ mise prune npm:pnpm" >&2
+    mise prune npm:pnpm
   else
     command pnpm "$@"
   fi
