@@ -58,6 +58,38 @@ This setup installs:
 - `11-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
 - `12-micro.sh` - micro editor; sets `EDITOR`/`VISUAL` if absent
 
+## Upgrade / Cleanup
+
+Commands to upgrade installed tools and clean up disk space:
+
+```bash
+# System packages
+sudo apt update && sudo apt upgrade -y
+sudo apt autoremove -y # if you want
+
+# mise itself
+mise self-update
+
+# Runtimes managed by mise
+mise upgrade
+mise prune # if you want
+
+# Homebrew and its formulae
+brew update && brew upgrade
+brew cleanup # if you want
+brew cleanup -s --prune=all # if you want more
+
+# uv itself
+uv self update
+
+# Python interpreters managed by uv
+uv python upgrade
+uv cache prune # if you want
+
+# haxelib (Haxe library manager)
+haxelib --global update haxelib
+```
+
 ## Additional Documents
 
 These documents provide some more reference information, but are not directly related to the scripts in this repository:
