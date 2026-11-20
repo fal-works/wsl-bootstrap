@@ -39,6 +39,7 @@ This setup installs:
    bash scripts/10-python.sh
    bash scripts/11-haxe.sh
    bash scripts/12-micro.sh
+   bash scripts/13-windows-fonts.sh
    ```
 
 3. After completion, restart WSL: `wsl --shutdown` (from Windows command prompt or PowerShell)
@@ -57,6 +58,7 @@ This setup installs:
 - `10-python.sh` - Python via uv
 - `11-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
 - `12-micro.sh` - micro editor; sets `EDITOR`/`VISUAL` if absent
+- `13-windows-fonts.sh` - Windows fonts for Linux applications (via fontconfig)
 
 ## Upgrade / Cleanup
 
