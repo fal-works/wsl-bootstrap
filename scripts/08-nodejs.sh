@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Exit immediately if any command exits with non-zero status
+# Exit on errors, unset variables, and pipeline failures
 set -euo pipefail
 
 # Load logger functions: log(), error()
