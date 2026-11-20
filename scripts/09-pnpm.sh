@@ -20,8 +20,9 @@ fi
 # BLOCK: Install pnpm via mise (npm backend)
 # PURPOSE: Set up pnpm package manager
 # DETAILS: Uses the npm backend (not the default standalone).
-#          The standalone bundles its own Node runtime, which can trigger
-#          false-positive warnings on the Node version in some sandboxed environemnts.
+#          The standalone build bundles its own Node runtime, and pnpm may check
+#          `engines.node` against that bundled version instead of the active mise Node,
+#          which can cause false "Unsupported engine" warnings.
 #          The npm backend installs pure-JS pnpm that runs on the active mise Node.
 # IMPORTANCE: CRITICAL - pnpm is required for the stated dev environment.
 log "Installing pnpm via mise (npm backend, latest)..."
