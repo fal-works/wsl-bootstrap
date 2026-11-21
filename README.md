@@ -72,7 +72,7 @@ sudo apt autoremove -y # if you want
 # mise itself
 mise self-update
 
-# Runtimes managed by mise
+# Runtimes managed by mise (includes pnpm)
 mise upgrade
 mise prune # if you want
 
