@@ -54,7 +54,7 @@ This setup installs:
 - `06-mise.sh` - Runtime version manager
 - `07-homebrew.sh` - Homebrew package manager
 - `08-nodejs.sh` - Node.js (via mise)
-- `09-pnpm.sh` - pnpm (via mise; requires mise and Node.js first)
+- `09-pnpm.sh` - pnpm (via mise; requires mise first)
 - `10-python.sh` - Python via uv
 - `11-haxe.sh` - Haxe, Neko, haxelib (requires mise and Homebrew)
 - `12-micro.sh` - micro editor; sets `EDITOR`/`VISUAL` if absent

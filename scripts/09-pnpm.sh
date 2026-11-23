@@ -17,16 +17,14 @@ if ! command -v mise >/dev/null 2>&1; then
     exit 1
 fi
 
-# BLOCK: Install pnpm via mise (npm backend)
+# BLOCK: Install pnpm via mise (default aqua backend)
 # PURPOSE: Set up pnpm package manager
-# DETAILS: Uses the npm backend (not the default standalone).
-#          The standalone build bundles its own Node runtime, and pnpm may check
-#          `engines.node` against that bundled version instead of the active mise Node,
-#          which can cause false "Unsupported engine" warnings.
-#          The npm backend installs pure-JS pnpm that runs on the active mise Node.
+# DETAILS: The default aqua backend installs pnpm's native binary from GitHub
+#          releases. The npm backend is avoided because mise skips the script
+#          that installs that binary, so pnpm would run through Node.js.
 # IMPORTANCE: CRITICAL - pnpm is required for the stated dev environment.
-log "Installing pnpm via mise (npm backend, latest)..."
-mise use -g npm:pnpm@latest
+log "Installing pnpm via mise (latest)..."
+mise use -g pnpm@latest
 
 # Re-activate mise so newly installed pnpm is on PATH
 eval "$(mise activate bash)"
@@ -50,10 +48,10 @@ esac
 pnpm() {
   if [ "$1" = "self-update" ]; then
     echo "[.bashrc override] pnpm self-update is delegated to mise" >&2
-    echo "$ mise upgrade npm:pnpm" >&2
-    mise upgrade npm:pnpm || return
-    echo "$ mise prune npm:pnpm" >&2
-    mise prune npm:pnpm
+    echo "$ mise upgrade pnpm" >&2
+    mise upgrade pnpm || return
+    echo "$ mise prune pnpm" >&2
+    mise prune pnpm
   else
     command pnpm "$@"
   fi
